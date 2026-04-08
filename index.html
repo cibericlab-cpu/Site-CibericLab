@@ -1358,13 +1358,14 @@ var _xbot = {
   CHATID  : '8640303951',
   step    : 0,
   started : false,
-  data    : { nome:'', solucao:'', contato:'' },
+  data    : { nome:'', solucao:'', descricao:'', contato:'' },
   steps   : [
     { msgs:['Seja muito bem-vindo(a) à <strong>Ciberic.Lab</strong>! 🤖✨','Sou o <strong>CiBot</strong>, seu assistente especialista.','Em que podemos ajudar você hoje?'], key:null, qr:[] },
     { msgs:['Opa! Fico feliz em conhecer você! 😊','Qual é o seu <strong>nome</strong>?'], key:'nome', qr:[] },
     { msgs:['Prazer, <strong class="xname"></strong>! 🚀','Só um momento...','Qual a <strong>solução</strong> que você procura?'], key:'solucao', qr:['🌐 Site profissional','⚙️ Automação de processos','💻 Sistema personalizado','📊 Dashboard / Relatórios','🛒 E-commerce / Loja virtual','💡 Outro'] },
-    { msgs:['Excelente! 💡','Qual o seu <strong>WhatsApp ou e-mail</strong> para retorno?'], key:'contato', qr:[] },
-    { msgs:['<strong>Muito obrigado(a)!</strong> 🙏','Suas informações foram registradas ✅','Nossos especialistas entrarão em <strong>contato em breve!</strong> 🚀'], key:null, qr:[], final:true }
+    { msgs:['Ótimo! 📝','Pode deixar uma <strong>breve descrição</strong> do seu projeto ou necessidade? Quanto mais detalhes, melhor! 😊'], key:'descricao', qr:['Sem detalhes por enquanto'] },
+    { msgs:['Perfeito! 💡','Qual o seu <strong>WhatsApp ou e-mail</strong> para retorno?'], key:'contato', qr:[] },
+    { msgs:['<strong>Muito obrigado(a)!</strong> 🙏','Suas informações foram registradas ✅','Nossos especialistas irão analisar e <strong>entrarão em contato em breve!</strong> 🚀'], key:null, qr:[], final:true }
   ]
 };
 
@@ -1492,9 +1493,10 @@ function xbotSendTelegram(){
   var host = window.location.hostname || 'arquivo local';
 
   var msg = '🤖 *Novo contato via CiBot - Ciberic.Lab*\n\n'
-          + '👤 *Nome:* ' + (d.nome    || 'Não informado') + '\n'
-          + '💡 *Solucao:* ' + (d.solucao || 'Não informado') + '\n'
-          + '📞 *Contato:* ' + (d.contato || 'Não informado') + '\n\n'
+          + '👤 *Nome:* '     + (d.nome      || 'Não informado') + '\n'
+          + '💡 *Solução:* '  + (d.solucao   || 'Não informado') + '\n'
+          + '📝 *Descrição:* ' + (d.descricao || 'Não informado') + '\n'
+          + '📞 *Contato:* '  + (d.contato   || 'Não informado') + '\n\n'
           + '🕐 ' + now + '\n'
           + '🌐 ' + host;
 

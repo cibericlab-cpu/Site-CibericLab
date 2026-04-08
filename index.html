@@ -1244,24 +1244,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
     cta.classList.add('on');row.style.display='none';},800);},700);},800);},600);},900);
   }
   bWA.onclick=function(){
-    var msg=encodeURIComponent('Olá! Vim pelo site da Ciberic.Lab! 🚀
-
-👤 Nome: '+nome+'
-🏢 Empresa: '+(empresa||'-')+'
-💡 Interesse: '+ajuda+'
-
-Gostaria de saber mais!');
+    var msg=encodeURIComponent('Olá! Vim pelo site da Ciberic.Lab! 🚀\n\n👤 Nome: '+nome+'\n🏢 Empresa: '+(empresa||'-')+'\n💡 Interesse: '+ajuda+'\n\nGostaria de saber mais!');
     window.open('https://wa.me/'+WA+'?text='+msg,'_blank');
   };
   bEM.onclick=function(){
     var s=encodeURIComponent('Contato via site — Ciberic.Lab');
-    var b=encodeURIComponent('Olá equipe Ciberic.Lab!
-
-Nome: '+nome+'
-Empresa: '+(empresa||'-')+'
-Interesse: '+ajuda+'
-
-Aguardo retorno!');
+    var b=encodeURIComponent('Olá equipe Ciberic.Lab!\n\nNome: '+nome+'\nEmpresa: '+(empresa||'-')+'\nInteresse: '+ajuda+'\n\nAguardo retorno!');
     window.location.href='mailto:'+EM+'?subject='+s+'&body='+b;
   };
   setTimeout(function(){if(!isOpen)bdg.style.display='flex';},5000);
